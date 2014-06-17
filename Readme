@@ -1,0 +1,29 @@
+划做一个报文解析的库, 作为在这方面的工作的一个总结. 后来发现bro早就做这样事情了, 而且很强大的样子, 还要不要继续...... 2014/06/17
+
+rely: 依赖的第三方包，第一次编译代码前，需要到子目录下执行install.sh脚本，完成第三方库的编译安装
+		rely/glib/install.sh    (安装到obj/glib-2.40.0/)
+		rely/pcap/install.sh    (安装到obj/libpcap-1.3.0/)
+
+ljac: 通用的C语言函数, 可以用到其它项目中
+		编译生成 libljac.so libljac.a   (安装到obj/ljac/)
+
+pktparse: 报文解析框架，依赖libljac.[so|a]  glib
+		编译生成 libpktparse.[so|a]  (安装到obj/pktparse/)
+
+		(未完成)
+
+pktparse_test: pktparse的测试程序
+		编译生成可执行程序pktparse_test (安装到out/bin)
+
+		(未完成)
+
+obj: 第三方或者自行编写的lib库以及头文件
+
+out: 编译得到的程序,以及运行环境(依赖的库文件)
+
+tmp: 存放编译过程中生成的临时文件, 例如.o文件，tmp目录中的内容在make时自动填充
+
+bin: 应用程序, 里面的内容暂时还没有完成
+
+		(未开始)
+
